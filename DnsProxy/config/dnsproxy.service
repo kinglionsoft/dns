@@ -1,0 +1,13 @@
+[Unit]
+Description=Dns Proxy
+
+[Service]
+WorkingDirectory=/opt/dns/
+ExecStart=/usr/bin/dotnet /opt/dns/DnsProxy.dll
+SyslogIdentifier=dns-proxy
+User=root
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -68,10 +68,9 @@ namespace DNS.Protocol {
             return result.ToArray();
         }
 
-        public override string ToString() {
-            return ObjectStringifier.New(this)
-                .Add("Name", "Type", "Class")
-                .ToString();
+        public override string ToString()
+        {
+            return $"Name={Name}, Type={Type}, Class={Class}";
         }
 
         [Marshalling.Endian(Marshalling.Endianness.Big)]
